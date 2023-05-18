@@ -12,7 +12,7 @@ const Header = () => {
         <Navbar collapseOnSelect expand="lg"  variant="light">
       <Container>
         <Navbar.Brand href="#home" className='fw-bold text-uppercase'>
-          <img src={logo} style={{width:'30px'}} alt="" srcset="" />
+          <img src={logo} style={{width:'30px'}}  />
          <span className='ps-2'> Speedy Wheels</span> </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" >
