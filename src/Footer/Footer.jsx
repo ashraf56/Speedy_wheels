@@ -5,7 +5,7 @@ import { FaBeer, FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from 'react-icon
 const Footer = () => {
     return (
         <div>
-             <footer className="w-100 py-4 flex-shrink-0 bg-dark">
+             <footer className="w-100 py-4 flex-shrink-0 bg-dark h-100">
         <div className="container py-4">
             <div className="row gy-4 gx-5">
                 <div className="col-lg-4 col-md-6">
