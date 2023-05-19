@@ -1,12 +1,14 @@
-import React from 'react';
-import { NavLink } from 'react-bootstrap';
+import React, { useContext } from 'react';
+import { NavLink, Tooltip } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import logo from '../assets/wheel.png'
+import { ContextAuth } from '../Routes/AuthenticationCenter';
 const Header = () => {
+  let {user}=useContext(ContextAuth);
     return (
         <div>
         <Navbar collapseOnSelect expand="lg"  variant="light">
@@ -29,28 +31,27 @@ const Header = () => {
 
           </Nav>
         
-          <Nav>
-          <li className="nav-item">
-    <Link className="nav-link " to='/' >HOME</Link>
-  </li>
-  <li className="nav-item">
-  <Link className="nav-link "  to='/blog' >BLOG</Link>  </li>
-  
-  <li className="nav-item">
-  <Link className="nav-link "  to='/login' >Login</Link>  </li>
+          <Nav className=' me-auto  align-items-center '>
+            
 
-  {/* <li className="nav-item">
+
+
+
+ <li className="nav-item">
+
   <div className="nav-link"  >
     {user?<>
      { user.photoURL ?
-      <img src={user.photoURL} data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} style={{width:'50px' ,borderRadius:'50px'}} />:
-      <FaUserCircle className='fs-2'/>
-     }<Tooltip id="my-tooltip" />
-     <span className='btn'  onClick={signOut}>Logout</span>
+      <img src={user.photoURL} data-tooltip-id="profile" data-tooltip-content={user.displayName} style={{width:'50px' ,borderRadius:'50px'}} />:
+<span>{user.email}</span>
+      
+
+ }<Tooltip id="profile" />
+     <span className='btn' >Logout</span>
       </> : 
-     <NavLink to='/login' activeClassName="active" className='nav-link text-decoration-none text-uppercase text-dark'>LOgin</NavLink>
+   <Link className="nav-link "  to='/login' >Login</Link> 
   }
-    </div>  </li> */}
+    </div>  </li> 
 
           </Nav>
         </Navbar.Collapse>
