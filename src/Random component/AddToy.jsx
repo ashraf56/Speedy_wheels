@@ -13,7 +13,7 @@ const AddToy = () => {
 <Form  >
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>User name</Form.Label>
-    <Form.Control type="name" name='name'    placeholder="Enter name"  />
+    <Form.Control type="name" name='name' defaultValue={user?.displayName}   placeholder="Enter name"  />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>User photo</Form.Label>
@@ -21,7 +21,7 @@ const AddToy = () => {
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" name='email'   placeholder="Enter email" required />
+    <Form.Control type="email" name='email' defaultValue={user?.email} disabled  placeholder="Enter email" required />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>

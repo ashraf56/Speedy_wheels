@@ -27,21 +27,23 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" > 
 
-          <Nav className='m-auto align-items-center fw-semibold '>
+          <Nav className=' mx-auto  align-items-center fw-semibold '>
   <li className="nav-item">
     <Link className="nav-link " to='/' >HOME</Link>
   </li>
   <li className="nav-item">
   <Link className="nav-link "  to='/blog' >BLOG</Link>  </li>
   <li className="nav-item">
-  <Link className="nav-link "  to='/addtoy' >ADD TOY</Link>  </li>
+ { user && <Link className="nav-link "  to='/addtoy' >ADD TOY</Link> }
+  
+   </li>
  
 
 
 
           </Nav>
         
-          <Nav className='   align-items-center '>
+          <Nav className='  ms-auto align-items-center '>
             
 <li className='nav-item'>
 {
@@ -51,9 +53,9 @@ const Header = () => {
 : <img src='https://img.icons8.com/?size=512&id=gYI9v0NbFgxC&format=png'  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName || user.email}  style={{width:'40px', height:'40px' , borderRadius:'20px'}} />
 }
   <Tooltip id="my-tooltip" />
- <span className='btn' onClick={signOut} >Logout</span>
+ <span className='btn' onClick={signOut} >LOGOUT</span>
   </>:
-  <Link to='/login' className='btn' >LOgIN</Link>
+  <Link to='/login' className='btn' >LOGIN</Link>
   
 }    
 
