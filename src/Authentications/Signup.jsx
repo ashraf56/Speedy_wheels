@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {  Link } from 'react-router-dom';
+import { ContextAuth } from '../Routes/AuthenticationCenter';
 
 const Signup = () => {
+let {user,Createuser}=useContext(ContextAuth)
 
 let registerdata=(e)=>{
   e.preventDefault();
@@ -13,6 +15,17 @@ let url=F.photo.value;
 let email=F.email.value;
 let password=F.password.value;
 console.log(name ,url ,email,password);
+
+Createuser(email,password)
+.then((userCredential) => {
+    const user = userCredential.user;
+   console.log(user);
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+   console.log(errorMessage);
+  });
+
 F.reset();
 }
 

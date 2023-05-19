@@ -5,15 +5,16 @@ import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
-  createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import router from './Routes/Route.jsx';
+import AuthenticationCenter from './Routes/AuthenticationCenter.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthenticationCenter>
        <RouterProvider router={router} />
-
+</AuthenticationCenter>
   </React.StrictMode>,
 )
