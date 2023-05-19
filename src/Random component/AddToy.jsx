@@ -1,44 +1,16 @@
 import React, { useContext } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import {  Link } from 'react-router-dom';
 import { ContextAuth } from '../Routes/AuthenticationCenter';
+import { Button, Form } from 'react-bootstrap';
 
-const Signup = () => {
-let {user,Createuser}=useContext(ContextAuth)
-
-let registerdata=(e)=>{
-  e.preventDefault();
-  let F=e.target;
-let name=F.name.value;
-let url=F.photo.value;
-let email=F.email.value;
-let password=F.password.value;
-console.log(name ,url ,email,password);
-
-Createuser(email,password)
-.then((userCredential) => {
-    const user = userCredential.user;
-   console.log(user);
-  })
-  .catch((error) => {
-    const errorMessage = error.message;
-   console.log(errorMessage);
-  });
-
-F.reset();
-}
-
-
+const AddToy = () => {
+    let {user}=useContext(ContextAuth)
     return (
-        <div  style={{height:'100%'}}>
-
-<h1 className='text-center fw-bold text-uppercase'> Signup now</h1>
-
-            <div className='w-50 mx-auto mb-5'>
+        <div>
+               <div className='w-50 mx-auto mb-5'>
 
 
-<Form onSubmit={registerdata} >
+<Form  >
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>User name</Form.Label>
     <Form.Control type="name" name='name'    placeholder="Enter name"  />
@@ -73,4 +45,4 @@ F.reset();
     );
 };
 
-export default Signup;
+export default AddToy;

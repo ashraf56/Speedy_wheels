@@ -9,7 +9,7 @@ import { Parallax, Pagination, Navigation } from "swiper";
 
 const Banner = () => {
     return (
-        <div  >
+        <div className='mt-5' >
           <Swiper
         style={{
           "--swiper-navigation-color": "#fff",

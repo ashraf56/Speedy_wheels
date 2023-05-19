@@ -33,6 +33,8 @@ const Header = () => {
   </li>
   <li className="nav-item">
   <Link className="nav-link "  to='/blog' >BLOG</Link>  </li>
+  <li className="nav-item">
+  <Link className="nav-link "  to='/addtoy' >ADD TOY</Link>  </li>
  
 
 
@@ -60,21 +62,6 @@ const Header = () => {
 </li>
 
 
- {/* <li className="nav-item">
-
-  <div className="nav-link flex"  >
-    {user?<>
-     { user.photoURL ?
-      <img src={user.photoURL} data-tooltip-id="profile" data-tooltip-content={user.displayName} style={{width:'50px' ,borderRadius:'50px'}} />:
-<span>{user.email}</span>
-      
-
- }<Tooltip id="profile" />
-     <span className='btn' onClick={signOut} >Logout</span>
-      </> : 
-   <Link className="nav-link "  to='/login' >Login</Link> 
-  }
-    </div>  </li>  */}
 
           </Nav>
         </Navbar.Collapse>
