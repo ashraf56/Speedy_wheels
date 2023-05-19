@@ -13,6 +13,7 @@ let url=F.photo.value;
 let email=F.email.value;
 let password=F.password.value;
 console.log(name ,url ,email,password);
+F.reset();
 }
 
 

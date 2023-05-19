@@ -21,7 +21,7 @@ Speedy Wheels Toy Marketplace
                 </div>
                 <div className="col-lg-2 col-md-6">
                     <h5 className="text-white  mb-3">Follow Us :</h5>
-                    <p className="small text-muted flex ">
+                    <div className="small text-muted flex ">
                         <div className='fs-3'>
                         <span> <FaFacebook /> </span>    
                         <span> <FaLinkedin  /> </span>    
@@ -33,7 +33,7 @@ Speedy Wheels Toy Marketplace
                         </div>
 
 
-                    </p>
+                    </div>
                 
                 </div>
                 <div className="col-lg-3 col-md-6">
