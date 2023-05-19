@@ -4,18 +4,28 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { ContextAuth } from '../Routes/AuthenticationCenter';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
-    let {user,google}=useContext(ContextAuth)
+    let {user,google,Login}=useContext(ContextAuth)
 let signIndata=e=>{
     e.preventDefault();
     let F=e.target;
-  let name=F.name.value;
-  let url=F.photo.value;
   let email=F.email.value;
   let password=F.password.value;
+  Login(email,password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+    console.log(user);
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+    console.log(errorMessage);
+  });
 
 }
+
+
 let Gsignin=()=>{
     google()
     .then((result) => {

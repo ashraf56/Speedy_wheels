@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { NavLink, Tooltip } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,8 +6,17 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import logo from '../assets/wheel.png'
 import { ContextAuth } from '../Routes/AuthenticationCenter';
+import { Tooltip } from 'react-tooltip';
 const Header = () => {
-  let {user}=useContext(ContextAuth);
+  let {user,logout}=useContext(ContextAuth);
+
+  let signOut=()=>{
+    logout()
+    .then(() => {
+
+    }).catch((error) => {
+    });
+  }
     return (
         <div>
         <Navbar collapseOnSelect expand="lg"  variant="light">
@@ -31,15 +39,30 @@ const Header = () => {
 
           </Nav>
         
-          <Nav className=' me-auto  align-items-center '>
+          <Nav className='   align-items-center '>
             
+<li className='nav-item'>
+{
+  user? <>
+ 
+  { user.photoURL?  <img src={user.photoURL}  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}  style={{width:'40px', height:'40px' , borderRadius:'20px'}} /> 
+: <img src='https://img.icons8.com/?size=512&id=gYI9v0NbFgxC&format=png'  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName || user.email}  style={{width:'40px', height:'40px' , borderRadius:'20px'}} />
+}
+  <Tooltip id="my-tooltip" />
+ <span className='btn' onClick={signOut} >Logout</span>
+  </>:
+  <Link to='/login' className='btn' >LOgIN</Link>
+  
+}    
 
 
 
+</li>
 
- <li className="nav-item">
 
-  <div className="nav-link"  >
+ {/* <li className="nav-item">
+
+  <div className="nav-link flex"  >
     {user?<>
      { user.photoURL ?
       <img src={user.photoURL} data-tooltip-id="profile" data-tooltip-content={user.displayName} style={{width:'50px' ,borderRadius:'50px'}} />:
@@ -47,11 +70,11 @@ const Header = () => {
       
 
  }<Tooltip id="profile" />
-     <span className='btn' >Logout</span>
+     <span className='btn' onClick={signOut} >Logout</span>
       </> : 
    <Link className="nav-link "  to='/login' >Login</Link> 
   }
-    </div>  </li> 
+    </div>  </li>  */}
 
           </Nav>
         </Navbar.Collapse>
