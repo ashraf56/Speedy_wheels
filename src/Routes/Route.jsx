@@ -7,6 +7,7 @@ import Signup from "../Authentications/Signup";
 import AddToy from "../Random component/AddToy";
 import Private from "./Private";
 import AllTOy from "../Random component/AllTOy";
+import Mytoy from "../Random component/Mytoy";
 
 
 
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
     path:'/alltoy',
     element: <AllTOy></AllTOy>,
     loader:()=> fetch('http://localhost:3000/alltoy')
+},
+{
+    path:'/mytoy',
+    element: <Private>
+<Mytoy></Mytoy>
+    </Private>,
 },
 
       ]

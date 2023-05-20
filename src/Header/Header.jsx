@@ -39,6 +39,10 @@ const Header = () => {
  { user && <Link className="nav-link "  to='/addtoy' >ADD TOY</Link> }
   
    </li>
+  <li className="nav-item">
+ { user && <Link className="nav-link "  to='/mytoy' >MY TOY</Link> }
+  
+   </li>
  
 
 
