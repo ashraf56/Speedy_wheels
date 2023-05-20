@@ -7,8 +7,8 @@ const Gallery = () => {
    
     return (
         <div className='my-5'>
-            <h3 className='py-5 fw-bold text-uppercase'>Wheelie Snaps
-           
+            <h3 className='py-5 fw-bold text-center text-uppercase'>Wheelie Snaps
+            <hr className='w-50 mx-auto' />
              </h3>
 
           
