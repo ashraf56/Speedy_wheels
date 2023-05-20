@@ -34,6 +34,8 @@ const Header = () => {
   <li className="nav-item">
   <Link className="nav-link "  to='/blog' >BLOG</Link>  </li>
   <li className="nav-item">
+  <Link className="nav-link "  to='/alltoy' >ALL TOY</Link>  </li>
+  <li className="nav-item">
  { user && <Link className="nav-link "  to='/addtoy' >ADD TOY</Link> }
   
    </li>

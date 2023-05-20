@@ -10,7 +10,7 @@ const Login = () => {
     let {user,google,Login}=useContext(ContextAuth)
     let location=useLocation();
     let navigate=useNavigate();
-    let from=location.state?.from?.pathname || '/login';
+    let from=location.state?.from?.pathname || '/';
 let signIndata=e=>{
     e.preventDefault();
     let F=e.target;

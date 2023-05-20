@@ -28,12 +28,15 @@ e.target.reset();
 
     return (
         <div>
+
+<h1 className='text-center text-uppercase fw-bold py-4'>Add Your Toy</h1>
+
                <div className='w-50 mx-auto mb-5'>
 
 
                <form onSubmit={handleSubmit(onSubmit)}>
   <div className="mb-3">
-    <label className="form-label">Email address</label>
+    <label className="form-label">Seller Email </label>
     <input type="email"   className="form-control"  
     {...register("email", { required: true})} 
     defaultValue={user?.email}
@@ -89,7 +92,7 @@ e.target.reset();
     <textarea className="form-control" aria-label="With textarea"    {...register("description", { required: true})}   ></textarea>
   </div>
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button type="submit" className="btn btn-warning w-100">Add Toy</button>
 </form>
 
 </div>
