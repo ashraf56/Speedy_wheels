@@ -49,7 +49,7 @@ const Header = () => {
 {
   user? <>
  
-  { user.photoURL?  <img src={user.photoURL}  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}  style={{width:'40px', height:'40px' , borderRadius:'20px'}} /> 
+  { user?.photoURL?  <img src={user.photoURL}  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName}  style={{width:'40px', height:'40px' , borderRadius:'20px'}} /> 
 : <img src='https://img.icons8.com/?size=512&id=gYI9v0NbFgxC&format=png'  data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName || user.email}  style={{width:'40px', height:'40px' , borderRadius:'20px'}} />
 }
   <Tooltip id="my-tooltip" />

@@ -2,43 +2,95 @@ import React, { useContext } from 'react';
 import {  Link } from 'react-router-dom';
 import { ContextAuth } from '../Routes/AuthenticationCenter';
 import { Button, Form } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
 
 const AddToy = () => {
     let {user}=useContext(ContextAuth)
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = (data,e) => {
+      
+fetch('http://localhost:3000/alltoy',{
+  method:"POST",
+  headers:{
+    'content-type':'application/json'
+  },
+  body:JSON.stringify(data)
+})
+.then(res=> res.json())
+.then(data=>{
+  console.log(data);
+})
+
+e.target.reset();
+}
+    ;
+
     return (
         <div>
                <div className='w-50 mx-auto mb-5'>
 
 
-<Form  >
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>User name</Form.Label>
-    <Form.Control type="name" name='name' defaultValue={user?.displayName}   placeholder="Enter name"  />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>User photo</Form.Label>
-    <Form.Control type='url' name='photo'   placeholder="Enter photo url" defaultValue='https://img.icons8.com/?size=512&id=gYI9v0NbFgxC&format=png' />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" name='email' defaultValue={user?.email} disabled  placeholder="Enter email" required />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" name='password' placeholder="Password" required />
-
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Already have an account? <Link to='/login' className='text-decoration-none text-dark' >Log in now</Link></Form.Label>
+               <form onSubmit={handleSubmit(onSubmit)}>
+  <div className="mb-3">
+    <label className="form-label">Email address</label>
+    <input type="email"   className="form-control"  
+    {...register("email", { required: true})} 
+    defaultValue={user?.email}
+    />
+  </div>
+  <div className="mb-3">
+    <label  className="form-label">Name </label>
+    <input type="text"   className="form-control"  
+    {...register("name", { required: true})} 
    
+    />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Seller Name</label>
+    <input type="text"   className="form-control"  
+    {...register("seller", { required: true})} 
+    defaultValue={user?.displayName}
+    />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Picture URL</label>
+    <input type="url"   className="form-control"  
+    {...register("url", { required: true})} 
+    defaultValue='https://images.unsplash.com/photo-1584641911870-6196a92c1920?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80'
+    />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Rating</label>
+    <input type="text"     className="form-control"  
+    {...register("rating", { required: true})} 
+   
+    />
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Sub-Category</label>
+    <select className='form-select' {...register("subCategory")}>
+        <option value="SportsCar">Sports-Car</option>
+        <option value="truck">truck</option>
+        <option value="policecar">police car</option>
+      </select>
+  </div>
 
-  </Form.Group>
+  <div className="mb-3">
+    <label className="form-label">Price</label>
+    <input type="number" {...register("price", { required: true})}  min="0" className="form-control" id="exampleInputPassword1"/>
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Available quantity</label>
+    <input type="number" {...register("quantity", { required: true})}  min="0" className="form-control" id="exampleInputPassword1"/>
+  </div>
+  <div className="mb-3">
+    <label className="form-label">Detail description</label>
+    <textarea className="form-control" aria-label="With textarea"    {...register("description", { required: true})}   ></textarea>
+  </div>
 
-  <Button variant="warning" className='w-100' type="submit">
-    Register
-  </Button>
-  
-</Form>
+  <button type="submit" className="btn btn-primary">Submit</button>
+</form>
 
 </div>
         </div>
