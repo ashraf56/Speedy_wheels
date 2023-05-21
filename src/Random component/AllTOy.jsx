@@ -1,6 +1,6 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { InputGroup, Table } from 'react-bootstrap';
+import { Form, Link, useLoaderData } from 'react-router-dom';
 
 const AllTOy = () => {
     let Toys=useLoaderData();
@@ -8,6 +8,14 @@ const AllTOy = () => {
     return (
         <div >
             <h1 className='text-center text-uppercase fw-bold py-4' >Toys Galore: A Playground of Playthings</h1>
+
+<div>
+<div class="input-group mb-3">
+  <input type="text" classNames="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+  <span className="input-group-text" id="basic-addon2">@example.com</span>
+</div>
+</div>
+
 <div className='my-5 mx-5'>
 <Table striped bordered hover size="sm">
       <thead className='bg-dark text-light text-center' >

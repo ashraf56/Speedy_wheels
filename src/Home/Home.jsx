@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from './Banner/Banner';
 import Gallery from './Gallery/Gallery';
 import Partner from '../Random component/Partner';
+import ShopCategory from '../Random component/ShopCategory';
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
          <Banner></Banner>
          <Partner></Partner>
 <Gallery></Gallery>
+<ShopCategory></ShopCategory>
 
         </div>
     );
