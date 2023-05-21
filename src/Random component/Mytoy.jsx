@@ -41,7 +41,7 @@ let deletetoy=id=>{
       if (data.deletedCount>0) {
         Swal.fire(
            'Deleted!',
-           'Your file has been deleted.',
+           'Your toy data has been deleted.',
            'success'
          )
    

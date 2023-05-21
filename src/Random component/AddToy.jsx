@@ -26,7 +26,7 @@ fetch('https://b7a11-toy-marketplace-server-three.vercel.app/alltoy',{
     Swal.fire({
       position: 'top-center',
       icon: 'success',
-      title: 'Data added successfully',
+      title: 'Toy added successfully',
       showConfirmButton: false,
       timer: 1500
     })
