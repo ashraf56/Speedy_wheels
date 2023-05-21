@@ -10,6 +10,7 @@ import AllTOy from "../Random component/AllTOy";
 import Mytoy from "../Random component/Mytoy";
 import UpdateToy from "../Random component/UpdateToy";
 import ViewDetail from "../Random component/ViewDetail";
+import Errorpage from "../Errorpage/Errorpage";
 
 
 
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <App></App>,
+      errorElement:<Errorpage/>,
       children:[
 {
     path:'/'

@@ -94,12 +94,12 @@ mytoys.map((toy)=>(
       <img src={toy.url} style={{width:'220px',}} />
     </td>
     <td style={{width:'80px'}} >{toy.seller}</td>
-    <td>{toy.name}</td>
+    <td  style={{width:'180px'}} >{toy.name}</td>
       <td style={{width:'100px'}}>{toy.subCategory}</td> 
     <td style={{width:'80px'}}>${toy.price}</td>
     <td>{toy.quantity}</td> 
     <td>{toy.rating}</td> 
-    <td style={{width:'100px'}}>{toy.description}</td> 
+    <td style={{width:'360px'}}>{toy.description}</td> 
 
       <td style={{width:'100px'}} > <Link to={`/update/${toy._id}`} ><button className='btn my-5' >Update</button></Link>  </td> 
       <td style={{width:'100px'}} > <button className='btn my-5' onClick={()=>deletetoy(toy._id)} >Delete</button> </td> 

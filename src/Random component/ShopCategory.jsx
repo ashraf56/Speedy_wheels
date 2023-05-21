@@ -19,13 +19,13 @@ fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/atoy/${active}`)
 })
 
 },[active])
-const TabClick = (tabName) => {
-  setactive(tabName);
+const TabClick = (tabs) => {
+  setactive(tabs);
 };
 
     return (
         <div className='my-5'>
-            <h1 className='text-center text-uppercase fw-bold py-4' >Fun-Filled Toys: A World of Imagination</h1>
+            <h1 className='text-center text-uppercase fw-bold py-4' > Find Your Favorites</h1>
            <Tabs>
     <TabList>
       <Tab   onClick={() => TabClick("truck")}>Truck</Tab>
@@ -33,7 +33,6 @@ const TabClick = (tabName) => {
       <Tab  onClick={() => TabClick("policecar")}>Policecar</Tab>
     </TabList>
  <TabPanel>
-  <h2>{alltoy.length}</h2>
   <div className="row row-cols-1 row-cols-md-2 g-4">
      {
     alltoy.map(toy=> <ToyCard
@@ -46,7 +45,6 @@ const TabClick = (tabName) => {
  
   </TabPanel>
  <TabPanel>
- <h2>{alltoy.length}</h2>
  <div className="row row-cols-1 row-cols-md-2 g-4">
      {
     alltoy.map(toy=> <ToyCard
@@ -58,7 +56,6 @@ const TabClick = (tabName) => {
   
   </TabPanel>
  <TabPanel>
- <h2>{alltoy.length}</h2>
 
  <div className="row row-cols-1 row-cols-md-2 g-4">
      {
