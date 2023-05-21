@@ -25,7 +25,7 @@ e.target.reset();
 }
 
     return (
-        <div style={{height:'500px'}}>
+        <div >
 
 
 <h1 className='text-center text-uppercase fw-bold py-4'>Update Toy Info</h1>

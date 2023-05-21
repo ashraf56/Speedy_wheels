@@ -20,8 +20,22 @@ fetch(url)
 
 },[mytoys])
 
+let deletetoy=id=>{
+
+fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${id}`, {
+  method:"DELETE",
+}) .then(res=> res.json())
+.then(data=>{
+console.log(data);
+
+})
+
+}
+
+
+
     return (
-        <div style={{height:'900px'}}>
+        <div >
   <h1 className='text-center' >My Toys</h1>
 
     <div className='my-5 mx-5'>
@@ -62,7 +76,7 @@ mytoys.map((toy,index)=>(
     <td>{toy.description}</td> 
 
       <td style={{width:'100px'}} > <Link to={`/update/${toy._id}`} ><button className='btn my-5' >Update</button></Link>  </td> 
-      <td style={{width:'100px'}} > <button className='btn my-5'>Delete</button> </td> 
+      <td style={{width:'100px'}} > <button className='btn my-5' onClick={()=>deletetoy(toy._id)} >Delete</button> </td> 
   </tr>
 
 ))
