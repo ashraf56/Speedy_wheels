@@ -21,7 +21,7 @@ const AllTOy = () => {
       <thead className='bg-dark text-light text-center' >
         <tr >
         
-          <th>#</th>
+          {/* <th>#</th> */}
           <th >Seller </th>
           <th>Toy Name</th>
           <th>Sub-category</th>
@@ -37,7 +37,7 @@ const AllTOy = () => {
 Toys.map((toy,index)=>(
 
     <tr>
-    <td style={{width:'50px',textAlign:'center'}}>{index+1}</td>
+    {/* <td style={{width:'50px',textAlign:'center'}}>{index+1}</td> */}
     <td style={{width:'80px'}} >{toy.seller}</td>
     <td>{toy.name}</td>
       <td style={{width:'100px'}}>{toy.subCategory}</td> 

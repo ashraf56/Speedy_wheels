@@ -69,7 +69,7 @@ let deletetoy=id=>{
       <thead className='bg-dark text-light text-center' >
         <tr >
         
-          <th>#</th>
+          {/* <th>#</th> */}
           <th>Photo url</th>
           <th >Seller </th>
           <th>Toy Name</th>
@@ -86,10 +86,10 @@ let deletetoy=id=>{
       </thead>
       <tbody className='fw-semibold bg-warning bg-opacity-50 ' >
       {
-mytoys.map((toy,index)=>(
+mytoys.map((toy)=>(
 
     <tr>
-    <td style={{width:'50px',textAlign:'center'}}>{index+1}</td>
+    {/* <td style={{width:'50px',textAlign:'center'}}>{index+1}</td> */}
     <td>
       <img src={toy.url} style={{width:'220px',}} />
     </td>
