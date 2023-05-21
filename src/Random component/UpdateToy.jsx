@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import { ContextAuth } from '../Routes/AuthenticationCenter';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
 
@@ -9,7 +9,17 @@ let Toys=useLoaderData()
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data,e) => {
       
-fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${Toys._id}`,{
+
+      Swal.fire({
+        title: 'Do you want to save the changes?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+
+      }).then((result) => {
+       if (result.isConfirmed) {
+    fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${Toys._id}`,{
   method:"PUT",
   headers:{
     'content-type':'application/json'
@@ -19,7 +29,19 @@ fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${Toys._id}`
 .then(res=> res.json())
 .then(data=>{
   console.log(data);
+  if (data.modifiedCount>0) {
+    Swal.fire('Saved!', '', 'success')
+  }
 })
+      }
+          else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')
+        } 
+
+      })
+
+
+
 
 e.target.reset();
 }

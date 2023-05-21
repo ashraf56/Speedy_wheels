@@ -3,6 +3,7 @@ import {  Link } from 'react-router-dom';
 import { ContextAuth } from '../Routes/AuthenticationCenter';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const AddToy = () => {
     let {user}=useContext(ContextAuth)
@@ -20,6 +21,18 @@ fetch('https://b7a11-toy-marketplace-server-three.vercel.app/alltoy',{
 .then(res=> res.json())
 .then(data=>{
   console.log(data);
+  if (data.insertedId) {
+    
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Data added successfully',
+      showConfirmButton: false,
+      timer: 1500
+    })
+    
+    
+      }
 })
 
 e.target.reset();
