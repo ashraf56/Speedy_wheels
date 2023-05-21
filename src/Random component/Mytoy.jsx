@@ -62,7 +62,7 @@ let deletetoy=id=>{
 
     return (
         <div >
-  <h1 className='text-center' >My Toys</h1>
+  <h1 className='text-center text-uppercase fw-bold py-4 ' >My Toys</h1>
 
     <div className='my-5 mx-5'>
 <Table striped bordered hover size="sm">
@@ -99,7 +99,7 @@ mytoys.map((toy,index)=>(
     <td style={{width:'80px'}}>${toy.price}</td>
     <td>{toy.quantity}</td> 
     <td>{toy.rating}</td> 
-    <td>{toy.description}</td> 
+    <td style={{width:'100px'}}>{toy.description}</td> 
 
       <td style={{width:'100px'}} > <Link to={`/update/${toy._id}`} ><button className='btn my-5' >Update</button></Link>  </td> 
       <td style={{width:'100px'}} > <button className='btn my-5' onClick={()=>deletetoy(toy._id)} >Delete</button> </td> 

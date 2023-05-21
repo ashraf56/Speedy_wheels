@@ -9,6 +9,7 @@ import Private from "./Private";
 import AllTOy from "../Random component/AllTOy";
 import Mytoy from "../Random component/Mytoy";
 import UpdateToy from "../Random component/UpdateToy";
+import ViewDetail from "../Random component/ViewDetail";
 
 
 
@@ -60,6 +61,13 @@ const router = createBrowserRouter([
     path:'/update/:id',
     element: <Private>
 <UpdateToy></UpdateToy>
+    </Private>,
+    loader: ({params})=> fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${params.id}`)
+},
+{
+    path:'/detail/:id',
+    element: <Private>
+<ViewDetail/>
     </Private>,
     loader: ({params})=> fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${params.id}`)
 },

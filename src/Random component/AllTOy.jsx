@@ -1,13 +1,13 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const AllTOy = () => {
     let Toys=useLoaderData();
 
     return (
         <div >
-            <h1 className='text-center' >Toys Galore: A Playground of Playthings</h1>
+            <h1 className='text-center text-uppercase fw-bold py-4' >Toys Galore: A Playground of Playthings</h1>
 <div className='my-5 mx-5'>
 <Table striped bordered hover size="sm">
       <thead className='bg-dark text-light text-center' >
@@ -35,7 +35,7 @@ Toys.map((toy,index)=>(
       <td style={{width:'100px'}}>{toy.subCategory}</td> 
     <td style={{width:'80px'}}>${toy.price}</td>
     <td>{toy.quantity}</td> 
-    <td style={{width:'100px'}} > <button className='btn'>View Detail</button> </td> 
+    <td style={{width:'100px'}} > <Link to={`/detail/${toy._id}`} ><button className='btn'>View Detail</button></Link> </td> 
     
   </tr>
 
