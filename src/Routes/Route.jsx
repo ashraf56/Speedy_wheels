@@ -8,6 +8,7 @@ import AddToy from "../Random component/AddToy";
 import Private from "./Private";
 import AllTOy from "../Random component/AllTOy";
 import Mytoy from "../Random component/Mytoy";
+import UpdateToy from "../Random component/UpdateToy";
 
 
 
@@ -47,13 +48,20 @@ const router = createBrowserRouter([
 {
     path:'/alltoy',
     element: <AllTOy></AllTOy>,
-    loader:()=> fetch('http://localhost:3000/alltoy')
+    loader:()=> fetch('https://b7a11-toy-marketplace-server-three.vercel.app/alltoy')
 },
 {
     path:'/mytoy',
     element: <Private>
 <Mytoy></Mytoy>
     </Private>,
+},
+{
+    path:'/update/:id',
+    element: <Private>
+<UpdateToy></UpdateToy>
+    </Private>,
+    loader: ({params})=> fetch(`https://b7a11-toy-marketplace-server-three.vercel.app/alltoy/${params.id}`)
 },
 
       ]

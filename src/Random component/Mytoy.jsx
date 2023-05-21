@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ContextAuth } from '../Routes/AuthenticationCenter';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Mytoy = () => {
 let {user}=useContext(ContextAuth)
 let [mytoys,setmytoy]=useState([])
 
-let url=`http://localhost:3000/mytoy?email=${user?.email}`
+let url=`https://b7a11-toy-marketplace-server-three.vercel.app/mytoy?email=${user?.email}`
 useEffect(()=>{
 fetch(url)
 .then(res=> res.json())
@@ -15,13 +16,15 @@ fetch(url)
 })
 
 
+
+
 },[mytoys])
 
     return (
-        <div>
+        <div style={{height:'900px'}}>
   <h1 className='text-center' >My Toys</h1>
 
-      <div className='my-5 mx-5'>
+    <div className='my-5 mx-5'>
 <Table striped bordered hover size="sm">
       <thead className='bg-dark text-light text-center' >
         <tr >
@@ -56,9 +59,9 @@ mytoys.map((toy,index)=>(
     <td style={{width:'80px'}}>${toy.price}</td>
     <td>{toy.quantity}</td> 
     <td>{toy.rating}</td> 
-    <td>{toy.description.slice(0,100)}......</td> 
+    <td>{toy.description}</td> 
 
-      <td style={{width:'100px'}} > <button className='btn my-5'>Update</button> </td> 
+      <td style={{width:'100px'}} > <Link to={`/update/${toy._id}`} ><button className='btn my-5' >Update</button></Link>  </td> 
       <td style={{width:'100px'}} > <button className='btn my-5'>Delete</button> </td> 
   </tr>
 
@@ -68,7 +71,7 @@ mytoys.map((toy,index)=>(
     
       </tbody>
     </Table>
-</div>     
+</div> 
         </div>
     );
 };
