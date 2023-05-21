@@ -4,11 +4,15 @@ const About = () => {
     return (
         <div>
             <div className="row">
+          
 <div className="col-md-6">
-<img src='https://img.freepik.com/free-photo/toy-car-with-gift-box_23-2147959328.jpg?w=740&t=st=1684681630~exp=1684682230~hmac=5c6b7b3c80e00b95232bef9d7e06f2f20bee8281d3d549d5fd121332c5c32ba7'className='img-fluid' />
+  <div data-aos="fade-right"> 
+            <img src='https://img.freepik.com/free-photo/toy-car-with-gift-box_23-2147959328.jpg?w=740&t=st=1684681630~exp=1684682230~hmac=5c6b7b3c80e00b95232bef9d7e06f2f20bee8281d3d549d5fd121332c5c32ba7'className='img-fluid' />
+            </div>
 
 </div>
 <div className="col-md-6 ">
+<div data-aos="fade-left">
     <h2 className='text-uppercase fw-bold'>ABout us</h2>
     <p>Welcome to Speedy Wheely Toy Marketplace!
 
@@ -19,7 +23,7 @@ At Speedy Wheely, we are passionate about toys and creating an exciting online p
 
 What We Offer</p>
 </div>
-
+</div>
             </div>
         </div>
     );

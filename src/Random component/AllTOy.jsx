@@ -4,16 +4,21 @@ import { Form, Link, useLoaderData } from 'react-router-dom';
 
 const AllTOy = () => {
     let Toys=useLoaderData();
+    const [searchQuery, setSearchQuery] = useState('');
+    const [filteredToys, setFilteredToys] = useState([])
+
+
+
 
     return (
         <div >
             <h1 className='text-center text-uppercase fw-bold py-4' >Toys Galore: A Playground of Playthings</h1>
 
-<div>
-<div class="input-group mb-3">
-  <input type="text" classNames="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
-  <span className="input-group-text" id="basic-addon2">@example.com</span>
-</div>
+
+<div class="input-group ps-5 pt-4 text-center mb-3">
+  <input type="text" classNames="form-control" placeholder="search"  />
+
+  <span className="input-group-text btn btn-outline-dark "    id="basic-addon2">search</span>
 </div>
 
 <div className='my-5 mx-5'>
@@ -21,7 +26,7 @@ const AllTOy = () => {
       <thead className='bg-dark text-light text-center' >
         <tr >
         
-          {/* <th>#</th> */}
+          <th>#</th>
           <th >Seller </th>
           <th>Toy Name</th>
           <th>Sub-category</th>
@@ -37,7 +42,7 @@ const AllTOy = () => {
 Toys.map((toy,index)=>(
 
     <tr>
-    {/* <td style={{width:'50px',textAlign:'center'}}>{index+1}</td> */}
+    <td style={{width:'50px',textAlign:'center'}}>{index+1}</td>
     <td style={{width:'80px'}} >{toy.seller}</td>
     <td>{toy.name}</td>
       <td style={{width:'100px'}}>{toy.subCategory}</td> 

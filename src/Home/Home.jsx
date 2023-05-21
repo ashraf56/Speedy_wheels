@@ -11,9 +11,15 @@ const Home = () => {
     return (
         <div className='container-lg' >
          <Banner></Banner>
-         <Partner></Partner>
+         <div data-aos="fade-down">
+              <Partner></Partner>
+
+         </div>
          <About></About>
-<Gallery></Gallery>
+         <div data-aos="zoom-in">
+        <Gallery></Gallery>    
+         </div>
+
 <ShopCategory></ShopCategory>
 
         </div>

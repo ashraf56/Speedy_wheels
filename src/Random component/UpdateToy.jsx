@@ -71,7 +71,7 @@ defaultValue={Toys.price}
 </div>
 <div className="mb-3">
 <label className="form-label">Detail description</label>
-<textarea className="form-control" aria-label="With textarea"  defaultValue={Toys.description}  {...register("description", { required: true})}   ></textarea>
+<textarea className="form-control " style={{height:"300px"}}  aria-label="With textarea"  defaultValue={Toys.description}  {...register("description", { required: true})}   ></textarea>
 </div>
 
 <button type="submit" className="btn btn-warning w-100">Update Toy</button>

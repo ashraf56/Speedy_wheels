@@ -20,9 +20,11 @@ Speedy Wheels Toy Marketplace
                     <p className="small text-muted mb-0">&copy; Copyrights 2023 Speedy Wheels. All rights reserved  </p>
                 </div>
                 <div className="col-lg-2 col-md-6">
-                    <h5 className="text-white  mb-3">Follow Us :</h5>
-                    <div className="small text-muted flex ">
+                    <h5 className="text-white  mb-3">Follow Us </h5>
+                    <div className="small text-muted  ">
+                       <span>Follow us on soicial media</span>
                         <div className='fs-3'>
+                       
                         <span> <FaFacebook /> </span>    
                         <span> <FaLinkedin  /> </span>    
                         <span>  <FaYoutube /></span>    
