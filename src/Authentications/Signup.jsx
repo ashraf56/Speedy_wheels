@@ -3,9 +3,23 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {  Link } from 'react-router-dom';
 import { ContextAuth } from '../Routes/AuthenticationCenter';
+import { useForm } from "react-hook-form";
 
 const Signup = () => {
 let {user,Createuser}=useContext(ContextAuth)
+const { register, handleSubmit ,reset} = useForm();
+const onSubmit = (data ,e)=>{
+  Createuser(data.email, data.password)
+.then((userCredential) => {
+    const user = userCredential.user;
+   console.log(user);
+  })
+  .catch((error) => {
+    const errorMessage = error.message;
+   console.log(errorMessage);
+  });
+reset()
+};
 
 let registerdata=(e)=>{
   e.preventDefault();
@@ -38,22 +52,22 @@ F.reset();
             <div className='w-50 mx-auto mb-5'>
 
 
-<Form onSubmit={registerdata} >
+<Form onSubmit={handleSubmit(onSubmit)}>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>User name</Form.Label>
-    <Form.Control type="name" name='name'    placeholder="Enter name"  />
+    <Form.Control type="name" name='name'  {...register("name")}  placeholder="Enter name"  />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>User photo</Form.Label>
-    <Form.Control type='url' name='photo'   placeholder="Enter photo url" defaultValue='https://img.icons8.com/?size=512&id=gYI9v0NbFgxC&format=png' />
+    <Form.Control type='url' name='photo' {...register("photo")}  placeholder="Enter photo url" defaultValue='https://img.icons8.com/?size=512&id=gYI9v0NbFgxC&format=png' />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" name='email'   placeholder="Enter email" required />
+    <Form.Control type="email" name='email' {...register("email")}  placeholder="Enter email" required />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
     <Form.Label>Password</Form.Label>
-    <Form.Control type="password" name='password' placeholder="Password" required />
+    <Form.Control type="password" name='password' {...register("password")} placeholder="Password" required />
 
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicPassword">
