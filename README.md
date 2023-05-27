@@ -1,6 +1,6 @@
 # Speedy Wheely
 
-Speedy Wheely Toy Marketplace is an online platform where users can buy and sell toys. This project aims to provide a convenient and user-friendly interface for toy enthusiasts to explore, trade, and connect with each other.
+Speedy Wheely Toy Marketplace is an online platform where users can buy and sell toys.  This project aims to provide a convenient and user-friendly interface for toy enthusiasts to explore, trade, and connect with each other.
 
 # Features
 
